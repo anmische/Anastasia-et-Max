@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Max &amp; Anastasia — Mariage</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* Décalage pour la nav sticky lors du scroll vers une ancre */
+    main > section[id] {
+      scroll-margin-top: 88px;
+    }
+    @media (max-width: 900px) {
+      main > section[id] { scroll-margin-top: 120px; }
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- ========== NAVIGATION ========== -->
+  <nav>
+    <!-- Logo doré (chaud) — décommenter pour tester l'autre -->
+    <a href="#accueil" class="nav-logo"><img src="logo-dore.png" alt="A & M" class="nav-logo-img"></a>
+    <!-- Logo blanc/argenté : remplacer logo-dore.png par logo-blanc.png ci-dessus -->
+
+    <ul class="nav-links">
+      <li><a href="#accueil" class="active">Accueil</a></li>
+      <li><a href="#programme">Programme</a></li>
+      <li><a href="#infos-pratiques">Infos pratiques</a></li>
+      <li><a href="#hebergements">Hébergements</a></li>
+      <li><a href="#rsvp">RSVP</a></li>
+      <li><a href="#liste-de-mariage">Liste de mariage</a></li>
+    </ul>
+  </nav>
+
+  <main>
+
+    <!-- ========== ACCUEIL ========== -->
+    <section id="accueil" class="home-hero">
+
+      <!-- ✏️ Remplacez les prénoms -->
+      <h1 class="couple-names">
+        Max
+        <span class="et">&amp;</span>
+        Anastasia
+      </h1>
+
+      <!-- ✏️ Remplacez la date -->
+      <p class="wedding-date">12 septembre 2026</p>
+
+      <!-- ✏️ Remplacez le lieu -->
+      <p class="wedding-place">Tertre</p>
+
+      <!-- Illustration du lieu -->
+      <div class="hero-illustration">
+        <img src="tertre.jpg" alt="Le Tertre" />
+      </div>
+
+      <!-- Compte à rebours (calculé automatiquement) -->
+      <div class="countdown">
+        <div class="countdown-item">
+          <div class="number" id="days">—</div>
+          <div class="label">Jours</div>
+        </div>
+        <div class="countdown-item">
+          <div class="number" id="hours">—</div>
+          <div class="label">Heures</div>
+        </div>
+        <div class="countdown-item">
+          <div class="number" id="minutes">—</div>
+          <div class="label">Minutes</div>
+        </div>
+        <div class="countdown-item">
+          <div class="number" id="seconds">—</div>
+          <div class="label">Secondes</div>
+        </div>
+      </div>
+
+      <!-- Bouton RSVP -->
+      <a href="#rsvp" class="btn-cta">Confirmer ma présence</a>
+
+    </section>
+
+    <!-- ========== PROGRAMME ========== -->
+    <section id="programme">
+
+      <header class="page-hero">
+        <h1>Programme</h1>
+        <p class="location-title">Samedi 12 Septembre 2026</p>
+      </header>
+
+      <div class="section">
+        <div class="divider"></div>
+
+        <div class="timeline">
+
+          <div class="timeline-item">
+            <div class="timeline-time">16h00</div>
+            <div class="timeline-content">
+              <h3>Messe de mariage</h3>
+              <p>Église Saint-Martin-de-Vertou<br>Grez-Neuville, Maine-et-Loire</p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-time">18h – 20h</div>
+            <div class="timeline-content">
+              <h3>Cocktail</h3>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-time">Soirée</div>
+            <div class="timeline-content">
+              <h3>Dîner placé</h3>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ========== INFOS PRATIQUES ========== -->
+    <section id="infos-pratiques">
+
+      <header class="page-hero">
+        <h1>Infos pratiques</h1>
+
+        <!-- ✏️ Remplacez par votre illustration -->
+        <div class="img-placeholder">Votre illustration ici</div>
+
+        <p class="location-title">Le Tertre — Grez-Neuville</p>
+      </header>
+
+      <!-- LIEU -->
+      <div class="section">
+        <h2 class="section-title">La réception</h2>
+        <div class="divider"></div>
+        <p class="section-text">
+          La réception aura lieu au Tertre, à Grez-Neuville (Maine-et-Loire).
+        </p>
+      </div>
+
+      <!-- BLOCS D'INFOS -->
+      <div class="section" style="padding-top: 0;">
+        <div class="info-blocks">
+
+          <!-- ADRESSE -->
+          <div class="info-block">
+            <span class="info-icon"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg></span>
+            <h3>Adresse</h3>
+            <p>
+              Le Tertre<br>
+              Grez-Neuville<br>
+              49220 Maine-et-Loire
+            </p>
+            <a href="https://maps.google.com/maps?q=Grez-Neuville+49220" target="_blank">Voir sur Google Maps →</a>
+          </div>
+
+          <!-- ACCÈS EN VOITURE -->
+          <div class="info-block">
+            <span class="info-icon"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 17H3v-5l2-5h14l2 5v5h-2"/><rect x="1" y="17" width="4" height="3" rx="1"/><rect x="19" y="17" width="4" height="3" rx="1"/><circle cx="7.5" cy="17" r="1.5"/><circle cx="16.5" cy="17" r="1.5"/></svg></span>
+            <h3>En voiture</h3>
+            <p>
+              Environ <strong>2h50</strong> depuis Paris.<br><br>
+              Parking gratuit sur place.
+            </p>
+          </div>
+
+          <!-- ACCÈS EN TRAIN / TRANSPORT -->
+          <div class="info-block">
+            <span class="info-icon"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="14" rx="3"/><path d="M4 11h16"/><path d="M8 17l-2 4"/><path d="M16 17l2 4"/><path d="M9 3v8"/><path d="M15 3v8"/></svg></span>
+            <h3>En train</h3>
+            <p>
+              Gare <strong>Angers Saint-Laud</strong>, puis environ <strong>20 min</strong> en voiture ou en bus jusqu'au lieu.
+            </p>
+          </div>
+
+          <!-- TENUE -->
+          <div class="info-block">
+            <span class="info-icon"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l-4 4H5l-2 4h4v12h10V10h4l-2-4h-3L12 2z"/></svg></span>
+            <h3>Tenue</h3>
+            <p>
+              <strong>Femmes</strong> — Robe longue et unie.<br><br>
+              <strong>Hommes</strong> — Chemise et cravate.
+            </p>
+          </div>
+
+          <!-- CONTACT -->
+          <div class="info-block">
+            <span class="info-icon"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 7 10-7"/></svg></span>
+            <h3>Questions &amp; réponses</h3>
+            <p>
+              27, avenue Ferdinand Buisson<br>
+              75016 Paris<br><br>
+              <a href="mailto:anastasiaetmax@gmail.com">anastasiaetmax@gmail.com</a>
+            </p>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- CARTE -->
+      <div class="section">
+        <h2 class="section-title">Carte</h2>
+        <div class="divider"></div>
+        <div style="border: 1px solid var(--green-lt); overflow: hidden; max-width: 800px; margin: 0 auto;">
+          <iframe
+            src="https://maps.google.com/maps?saddr=47.6029507,-0.6876339&daddr=47.6030422,-0.6995573&output=embed&hl=fr&z=15"
+            width="100%"
+            height="340"
+            style="border:0; display:block;"
+            allowfullscreen=""
+            loading="lazy">
+          </iframe>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ========== HÉBERGEMENTS ========== -->
+    <section id="hebergements">
+
+      <header class="page-hero">
+        <h1>Hébergements</h1>
+      </header>
+
+      <div class="section" style="padding-bottom: 80px;">
+        <p class="section-text">Informations à venir.</p>
+      </div>
+
+    </section>
+
+    <!-- ========== RSVP ========== -->
+    <section id="rsvp">
+
+      <header class="page-hero">
+        <h1>RSVP</h1>
+      </header>
+
+      <div class="section">
+        <p class="section-text" style="margin-bottom: 44px;">
+          Merci de confirmer votre présence avant le 12 juillet 2026.
+        </p>
+        <!-- ✏️ Remplacez # par votre lien Google Forms -->
+        <a href="#" target="_blank" class="btn-cta" style="text-decoration:none;">Confirmer ma présence →</a>
+      </div>
+
+    </section>
+
+    <!-- ========== LISTE DE MARIAGE ========== -->
+    <section id="liste-de-mariage">
+
+      <header class="page-hero">
+        <h1>Liste de mariage</h1>
+      </header>
+
+      <div class="section">
+        <p class="section-text" style="margin-bottom: 44px;">
+          Votre présence à nos côtés est le plus beau des cadeaux.<br>
+          Si vous souhaitez néanmoins nous gâter, voici notre liste.
+        </p>
+        <a href="https://www.millemercismariage.com/nas-et-max/liste.html" target="_blank" class="btn-cta" style="text-decoration:none;">Voir la liste de mariage →</a>
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- ========== SHIBA INU (désactivé) ========== -->
+  <!-- <div id="shiba-wrap">
+    <div id="shiba-inner">
+      <svg viewBox="0 0 150 112" width="150" height="112" xmlns="http://www.w3.org/2000/svg">
+
+        <!-- === QUEUE (enroulée, en arrière-plan) === -->
+        <!-- Corps de la queue gris foncé -->
+        <path d="M 40,60 C 22,48 16,28 25,16 C 34,5 48,9 50,23 C 52,36 44,50 40,60 Z"
+              fill="#3e3e52" stroke="#2a2a3e" stroke-width="1.2"/>
+        <!-- Bout crème/blanc de la queue -->
+        <ellipse cx="27" cy="15" rx="13" ry="9" fill="#e8dcc5" transform="rotate(-15,27,15)"/>
+        <ellipse cx="22" cy="20" rx="9" ry="7" fill="#e8dcc5" opacity="0.75"/>
+
+        <!-- === CORPS === -->
+        <!-- Ventre crème en dessous -->
+        <path d="M 46,78 C 62,89 94,89 110,78 L 110,82 C 94,94 62,94 46,82 Z"
+              fill="#e8dcc5"/>
+        <!-- Corps gris principal -->
+        <ellipse cx="76" cy="64" rx="34" ry="21" fill="#3e3e52"/>
+        <!-- Poitrine crème à l'avant du corps -->
+        <ellipse cx="103" cy="72" rx="15" ry="13" fill="#e8dcc5"/>
+
+        <!-- === PATTES ARRIÈRE (derrière) === -->
+        <g class="shiba-leg leg-b">
+          <rect x="50" y="78" width="13" height="24" rx="5.5" fill="#3e3e52" stroke="#2a2a3e" stroke-width="0.5"/>
+          <ellipse cx="56" cy="102" rx="9" ry="4.5" fill="#333348"/>
+        </g>
+        <g class="shiba-leg leg-a">
+          <rect x="66" y="78" width="13" height="24" rx="5.5" fill="#3e3e52" stroke="#2a2a3e" stroke-width="0.5"/>
+          <ellipse cx="72" cy="102" rx="9" ry="4.5" fill="#333348"/>
+        </g>
+
+        <!-- === PATTES AVANT === -->
+        <g class="shiba-leg leg-a">
+          <rect x="87" y="78" width="13" height="24" rx="5.5" fill="#3e3e52" stroke="#2a2a3e" stroke-width="0.5"/>
+          <ellipse cx="93" cy="102" rx="9" ry="4.5" fill="#333348"/>
+        </g>
+        <g class="shiba-leg leg-b">
+          <rect x="103" y="78" width="13" height="24" rx="5.5" fill="#3e3e52" stroke="#2a2a3e" stroke-width="0.5"/>
+          <ellipse cx="109" cy="102" rx="9" ry="4.5" fill="#333348"/>
+        </g>
+
+        <!-- === COU === -->
+        <path d="M 104,54 C 110,45 122,43 126,51 C 130,58 124,68 116,70 C 112,63 106,60 104,54 Z"
+              fill="#3e3e52"/>
+        <!-- Fourrure crème du cou/poitrine haute -->
+        <ellipse cx="118" cy="58" rx="9" ry="11" fill="#e8dcc5" opacity="0.8"/>
+
+        <!-- === TÊTE === -->
+        <ellipse cx="120" cy="35" rx="21" ry="19" fill="#3e3e52" stroke="#2a2a3e" stroke-width="0.5"/>
+
+        <!-- Zone crème du museau (joues + muzzle) -->
+        <ellipse cx="133" cy="41" rx="13" ry="10" fill="#e8dcc5"/>
+        <ellipse cx="139" cy="39" rx="9" ry="8" fill="#e8dcc5"/>
+
+        <!-- Nez -->
+        <ellipse cx="144" cy="36" rx="4.5" ry="3.2" fill="#1a1a28"/>
+        <ellipse cx="143" cy="35" rx="1.5" ry="1" fill="#3a3a50" opacity="0.6"/>
+
+        <!-- Bouche / sourire -->
+        <path d="M 139,42 Q 142,46 146,43"
+              fill="none" stroke="#2d2d3e" stroke-width="1.5" stroke-linecap="round"/>
+
+        <!-- Tache tan sur la joue -->
+        <ellipse cx="131" cy="45" rx="8" ry="5" fill="#c8915a" opacity="0.55"/>
+
+        <!-- Oeil -->
+        <circle cx="119" cy="29" r="6" fill="white"/>
+        <circle cx="120" cy="29" r="4" fill="#1a1000"/>
+        <circle cx="121.5" cy="27.5" r="1.4" fill="white"/>
+
+        <!-- Marque tan sourcil -->
+        <ellipse cx="118" cy="23" rx="6" ry="2.8" fill="#c8915a"/>
+
+        <!-- Oreille arrière (gauche dans la vue) -->
+        <polygon points="110,21 105,4 118,18" fill="#363648" stroke="#2a2a3e" stroke-width="0.5"/>
+        <polygon points="111,20 107,8 116,18" fill="#e8dcc5" opacity="0.55"/>
+
+        <!-- Oreille avant (droite dans la vue) -->
+        <polygon points="122,18 124,1 133,16" fill="#3e3e52" stroke="#2a2a3e" stroke-width="0.5"/>
+        <polygon points="123,17 125,5 131,15" fill="#e8dcc5" opacity="0.55"/>
+
+      </svg>
+    </div>
+  </div> -->
+
+  <!-- ========== FOOTER ========== -->
+  <footer>
+    <!-- ✏️ Remplacez les prénoms et la date -->
+    Max &amp; Anastasia &nbsp;·&nbsp; 12 Septembre 2026
+  </footer>
+
+  <!-- ========== SCRIPTS ========== -->
+  <script>
+
+    // ---- Compte à rebours ----
+    const weddingDate = new Date(2026, 8, 12, 16, 0, 0); // 12 septembre 2026 à 16h
+
+    function updateCountdown() {
+      const now  = new Date();
+      const diff = weddingDate - now;
+
+      if (diff <= 0) {
+        document.querySelector('.countdown').innerHTML = '<p style="font-family:var(--font-serif);font-size:28px;font-weight:300;letter-spacing:4px;">C\'est aujourd\'hui ! 🎉</p>';
+        return;
+      }
+
+      const days    = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours   = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+      document.getElementById('days').textContent    = days;
+      document.getElementById('hours').textContent   = String(hours).padStart(2, '0');
+      document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
+      document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
+    }
+
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+
+    // ---- Navigation active au scroll ----
+    const sections = document.querySelectorAll('main > section[id]');
+    const navLinks = document.querySelectorAll('.nav-links a');
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          navLinks.forEach(link => link.classList.remove('active'));
+          const active = document.querySelector(`.nav-links a[href="#${entry.target.id}"]`);
+          if (active) active.classList.add('active');
+        }
+      });
+    }, { rootMargin: '-40% 0px -55% 0px' });
+
+    sections.forEach(s => observer.observe(s));
+
+    // ---- Formulaire RSVP ----
+    const presenceSelect = document.getElementById('presence');
+    const regimeGroup    = document.getElementById('regime-group');
+    const navetteGroup   = document.getElementById('navette-group');
+    const enfantsGroup   = document.getElementById('enfants-group');
+
+    [regimeGroup, navetteGroup, enfantsGroup].forEach(el => el.style.display = 'none');
+
+    presenceSelect.addEventListener('change', function () {
+      const visible = this.value === 'oui';
+      [regimeGroup, navetteGroup, enfantsGroup].forEach(el => {
+        el.style.display = visible ? 'block' : 'none';
+      });
+    });
+
+    function handleSubmit(e) {
+      e.preventDefault();
+      document.getElementById('rsvpForm').style.display = 'none';
+      document.getElementById('confirmation').style.display = 'block';
+    }
+
+    // ---- Shiba Inu qui court (désactivé) ----
+    /*
+    (function () {
+      const dog = document.getElementById('shiba-wrap');
+      let x = -120;
+      let dir = 1;
+      const speed = 2.8;
+      function step() {
+        x += speed * dir;
+        const maxX = window.innerWidth - 155;
+        if (x >= maxX) { dir = -1; dog.style.transformOrigin = 'center center'; dog.style.transform = 'scaleX(-1)'; }
+        if (x <= 0)    { dir =  1; dog.style.transform = 'scaleX(1)'; }
+        dog.style.left = x + 'px';
+        requestAnimationFrame(step);
+      }
+      step();
+    })();
+    */
+
+    // ---- Liste de mariage ----
+    function offrir(id, btn) {
+      const item = document.querySelector(`.liste-item[data-id="${id}"]`);
+      if (!item) return;
+      if (!confirm('Confirmez-vous que vous souhaitez offrir ce cadeau ?')) return;
+      item.classList.add('reservee');
+      btn.disabled = true;
+      alert('Merci pour votre générosité ! 🌿\nN\'oubliez pas de prévenir les mariés par email.');
+    }
+
+  </script>
+
+</body>
+</html>
