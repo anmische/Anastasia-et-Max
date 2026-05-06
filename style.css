@@ -643,40 +643,41 @@ footer {
 
 /* ===== RESPONSIVE ===== */
 @media (max-width: 900px) {
-  /* Nav hamburger */
   nav {
     flex-direction: row;
-    flex-wrap: wrap;
     padding: 0 20px;
-    min-height: 70px;
-    height: auto;
+    height: 70px;
     align-items: center;
     justify-content: space-between;
+    position: relative;
   }
 
-  /* Hamburger à gauche, logo à droite */
+  .nav-logo { order: 1; }
+
   .nav-hamburger {
     display: flex;
-    order: 1;
+    order: 2;
   }
 
-  .nav-logo { order: 2; }
-
+  /* Menu en position absolue — s'affiche par-dessus la page */
   .nav-links {
     display: none;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    right: 0;
+    z-index: 999;
     flex-direction: column;
     align-items: center;
-    width: 100%;
-    order: 3;
     gap: 20px;
-    padding: 24px 0;
-    border-top: 1px solid var(--green-lt);
+    padding: 28px 0;
     background-color: var(--bg);
+    border-bottom: 1px solid var(--green-lt);
+    box-shadow: 0 6px 16px rgba(60, 87, 111, 0.08);
   }
 
   .nav-links.open { display: flex; }
 
-  /* Logo plus petit pour tenir dans la barre */
   .nav-logo-img {
     width: 50px !important;
     height: 50px !important;
