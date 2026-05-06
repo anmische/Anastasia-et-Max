@@ -3,13 +3,13 @@
    À personnaliser : couleurs, polices, espacements
    ============================================ */
 
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Montserrat:wght@300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Montserrat:wght@300;400&display=swap');
 
 /* ===== VARIABLES (facile à modifier) ===== */
 :root {
   --bg:        #f8f5f0;   /* blanc cassé inspiré de la pierre du Tertre */
   --green:     #3c576f;   /* bleu ardoise — couleur principale */
-  --green-mid: #6e88a0;   /* bleu ardoise moyen */
+  --green-mid: #5a7490;   /* bleu ardoise moyen */
   --green-lt:  rgba(60, 87, 111, 0.15); /* bordures légères */
   --font-serif: 'Cormorant Garamond', Georgia, serif;
   --font-sans:  'Montserrat', sans-serif;
@@ -25,13 +25,17 @@ body {
   color: var(--green);
   font-family: var(--font-serif);
   min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
 
 /* ===== NAVIGATION ===== */
 nav {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
+  gap: 48px;
   padding: 0 60px;
   height: 110px;
   overflow: visible;
@@ -41,6 +45,31 @@ nav {
   z-index: 100;
   border-bottom: 1px solid var(--green-lt);
 }
+
+/* Bouton hamburger (caché sur desktop) */
+.nav-hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 6px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+}
+
+.nav-hamburger span {
+  display: block;
+  width: 24px;
+  height: 1.5px;
+  background: var(--green);
+  transition: all 0.3s;
+  transform-origin: center;
+}
+
+.nav-hamburger.open span:nth-child(1) { transform: translateY(7.5px) rotate(45deg); }
+.nav-hamburger.open span:nth-child(2) { opacity: 0; }
+.nav-hamburger.open span:nth-child(3) { transform: translateY(-7.5px) rotate(-45deg); }
 
 /* Logo image */
 .nav-logo-img {
@@ -90,14 +119,15 @@ nav {
 /* ===== EN-TÊTE DE PAGE (hors accueil) ===== */
 .page-hero {
   text-align: center;
-  padding: 80px 40px 50px;
+  padding: 40px 40px 30px;
 }
 
 .page-hero h1 {
   font-family: var(--font-serif);
-  font-size: clamp(24px, 4vw, 48px);
-  font-weight: 300;
-  letter-spacing: 10px;
+  font-size: clamp(22px, 3.5vw, 40px);
+  font-weight: 400;
+  letter-spacing: 8px;
+  text-indent: 8px;
   text-transform: uppercase;
   color: var(--green);
 }
@@ -163,7 +193,7 @@ nav {
 .section-title {
   font-family: var(--font-serif);
   font-size: 28px;
-  font-weight: 300;
+  font-weight: 400;
   letter-spacing: 5px;
   text-transform: uppercase;
   color: var(--green);
@@ -541,7 +571,7 @@ nav {
 
 .info-block h3 {
   font-size: 16px;
-  font-weight: 300;
+  font-weight: 400;
   letter-spacing: 4px;
   text-transform: uppercase;
   color: var(--green);
@@ -566,6 +596,38 @@ nav {
   letter-spacing: 1px;
 }
 
+/* ===== PALETTE DE COULEURS ===== */
+.palette-title {
+  font-family: var(--font-serif);
+  font-size: 20px;
+  font-weight: 300;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--green);
+  margin-bottom: 28px;
+}
+
+.color-palette {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.color-swatch {
+  width: 50px;
+  height: 120px;
+  border-radius: 3px;
+}
+
+.info-lieux {
+  grid-template-columns: repeat(2, 1fr);
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 /* ===== FOOTER ===== */
 footer {
   text-align: center;
@@ -581,18 +643,61 @@ footer {
 
 /* ===== RESPONSIVE ===== */
 @media (max-width: 900px) {
-  nav { flex-direction: column; gap: 18px; padding: 18px 24px; }
-  .nav-links { flex-wrap: wrap; justify-content: center; gap: 18px; }
+  /* Nav hamburger */
+  nav {
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 0 24px;
+    height: 70px;
+    align-items: center;
+  }
+
+  .nav-hamburger { display: flex; }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 20px;
+    padding: 24px 0;
+    border-top: 1px solid var(--green-lt);
+    background-color: var(--bg);
+  }
+
+  .nav-links.open { display: flex; }
+
+  /* Tailles */
   .home-hero .couple-names { font-size: 52px; }
-  .countdown { gap: 28px; }
-  .countdown-item .number { font-size: 42px; }
+  .countdown { gap: 24px; }
+  .countdown-item .number { font-size: 38px; }
+
+  /* Infos pratiques */
+  .info-blocks { grid-template-columns: 1fr; }
+  .info-lieux { grid-template-columns: 1fr; max-width: 100%; }
 }
 
 @media (max-width: 600px) {
-  .section { padding: 44px 24px; }
-  .page-hero { padding: 60px 24px 40px; }
+  .section { padding: 44px 20px; }
+  .page-hero { padding: 30px 20px 20px; }
   .form-row { grid-template-columns: 1fr; }
-  nav { padding: 16px 20px; }
-  .nav-links { gap: 14px; }
-  .nav-links a { font-size: 9px; letter-spacing: 2px; }
+  .nav-links a { font-size: 10px; letter-spacing: 2.5px; }
+
+  /* Accueil */
+  .home-hero { padding: 40px 20px; }
+  .home-hero .couple-names { font-size: 40px; }
+  .countdown { gap: 16px; }
+  .countdown-item .number { font-size: 32px; }
+  .countdown-item .label { font-size: 7.5px; letter-spacing: 2px; }
+
+  /* Palette couleurs */
+  .color-palette { gap: 8px; }
+  .color-swatch { width: 34px; height: 90px; }
+
+  /* Timeline */
+  .timeline-item { gap: 18px; }
+  .timeline-time { min-width: 54px; font-size: 10px; }
+
+  /* Hero image */
+  .hero-illustration { margin-bottom: 28px; }
 }
