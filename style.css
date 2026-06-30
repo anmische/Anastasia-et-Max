@@ -123,6 +123,37 @@ nav {
   padding-bottom: 2px;
 }
 
+/* ===== SÉLECTEUR DE LANGUE ===== */
+.lang-switcher {
+  display: flex;
+  align-items: center;
+  gap: 1px;
+  margin-left: auto;
+}
+
+.lang-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: var(--font-sans);
+  font-size: 9px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--green);
+  opacity: 0.4;
+  padding: 4px 7px;
+  transition: opacity 0.2s;
+}
+.lang-btn:hover { opacity: 0.7; }
+.lang-btn.active { opacity: 1; font-weight: 500; }
+
+.lang-sep {
+  font-family: var(--font-sans);
+  font-size: 9px;
+  color: var(--green);
+  opacity: 0.25;
+}
+
 /* ===== EN-TÊTE DE PAGE (hors accueil) ===== */
 .page-hero {
   text-align: center;
@@ -661,9 +692,14 @@ footer {
 
   .nav-logo { order: 1; }
 
+  .lang-switcher {
+    margin-left: 0;
+    order: 2;
+  }
+
   .nav-hamburger {
     display: flex;
-    order: 2;
+    order: 3;
   }
 
   /* Menu en position absolue — s'affiche par-dessus la page */
